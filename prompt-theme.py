@@ -419,10 +419,10 @@ def getColorCode(color:str,type: str,depth:int) -> str:
         colorRaw = color.lower()
         if len(colorRaw) == 7 and colorRaw[:1] == '#':
             code = getColorCodeFromNumberTypeDepth(
-                getBestColorFromHex(colorRaw[1:]), type, depth)
+                getBestColorFromHexDepth(colorRaw[1:],depth), type, depth)
         elif colorRaw[:3].lower() == 'rgb':
             code = getColorCodeFromNumberTypeDepth(
-                getBestColorFromRgb(colorRaw[4:-1]), type, depth)
+                getBestColorFromRgbDepth(colorRaw[4:-1],depth), type, depth)
         elif (colorRaw.isdigit()):
             code = getColorCodeFromNumberTypeDepth(
                 colorRaw, type, depth)
@@ -456,9 +456,9 @@ def getBestColorFromHexDepth(hexC: str, depth: int) -> int:
     g = hexC[2:-2].lower()
     b = hexC[-2:].lower()
     if r == g and g == b:
-        return COLOR_D['hexMap'][ ( '#%s%s%s' % ( COLOR_D['bestGreyHex'][r],COLOR_D['bestGreyHex'][g],COLOR_D['bestGreyHex'][b]) ) ]
+        return COLOR_8BIT_D['hexMap'][('#%s%s%s' % (COLOR_8BIT_D['bestGreyHex'][r], COLOR_8BIT_D['bestGreyHex'][g], COLOR_8BIT_D['bestGreyHex'][b]))]
     else:
-        return COLOR_D['hexMap'][ ( '#%s%s%s' % ( COLOR_D['bestHex'][r],COLOR_D['bestHex'][g],COLOR_D['bestHex'][b]) ) ]
+        return COLOR_8BIT_D['hexMap'][('#%s%s%s' % (COLOR_8BIT_D['bestHex'][r], COLOR_8BIT_D['bestHex'][g], COLOR_8BIT_D['bestHex'][b]))]
 
 
 def getBestColorFromRgbDepth(rgbC:str, depth: int) -> int:
@@ -486,9 +486,9 @@ def getBestColorFromRgbDepth(rgbC:str, depth: int) -> int:
     g = rgb[1]
     b = rgb[2]
     if r == g and g == b:
-        return COLOR_D['rgbMap'][ ( 'rgb(%s,%s,%s)' % ( COLOR_D['bestGreyRgb'][r],COLOR_D['bestGreyRgb'][g],COLOR_D['bestGreyRgb'][b]) ) ]
+        return COLOR_8BIT_D['rgbMap'][ ( 'rgb(%s,%s,%s)' % ( COLOR_8BIT_D['bestGreyRgb'][int(r)],COLOR_8BIT_D['bestGreyRgb'][int(g)],COLOR_8BIT_D['bestGreyRgb'][int(b)]) ) ]
     else:
-        return COLOR_D['rgbMap'][ ( 'rgb(%s,%s,%s)' % ( COLOR_D['bestRgb'][r],COLOR_D['bestRgb'][g],COLOR_D['bestRgb'][b]) ) ]
+        return COLOR_8BIT_D['rgbMap'][ ( 'rgb(%s,%s,%s)' % ( COLOR_8BIT_D['bestRgb'][int(r)],COLOR_8BIT_D['bestRgb'][int(g)],COLOR_8BIT_D['bestRgb'][int(b)]) ) ]
 
 
 def getColorCodeFromNumberTypeDepth(code: int,type: str, depth: int) -> str:
@@ -828,14 +828,14 @@ def getColor8BitLookupDict() -> dict:
         for iC in groups:
             if (bI == None or abs(iC-i) < abs(bI-i)):
                 bI = iC
-        bestRgb[i] = bI
+        bestRgb[int(i)] = int(bI)
         bestHex[('%02X' % i).lower() ] = ('%02X' % (bI)).lower()
 
         for color in greyColors:
             iC = color['rgb']['r']
             if (bI == None or abs(iC-i) < abs(bI-i)):
                 bI = iC
-        bestGreyRgb[i] = bI
+        bestGreyRgb[int(i)] = int(bI)
         bestGreyHex[('%02X' % i).lower()] = ('%02X' % (bI)).lower()
 
     nameMap['default'] = DEFAULT_COLOR
