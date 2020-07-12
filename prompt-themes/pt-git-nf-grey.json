@@ -1,0 +1,77 @@
+[
+    {
+        "color":{
+            "fg": "white",
+            "bg": "235",
+            "depth": 8
+        },
+        "text": "\uF2C0 \\u"
+    },
+    {
+        "color": {
+            "fg": "235",
+            "bg": "240",
+            "depth": 8
+        },
+        "text": "\uE0B0"
+    },
+    {
+        "color": {
+            "fg": "white",
+            "bg": "240",
+            "depth": 8
+        },
+        "text": "\uF878 \\h"
+    },
+    {
+        "color": {
+            "fg": "240",
+            "bg": "250",
+            "depth": 8
+        },
+        "text": "\uE0B0"
+    },
+    {
+        "color": {
+            "fg": "black",
+            "bg": "250",
+            "depth": 8
+        },
+        "text": "$([ $(pt_get_git_dir) == 1 ] && echo -n $'\uE725' && echo -n ' ')"
+    },
+    {
+        "text": "$([ $(pt_get_git_dir) == 1 ] && echo -n $(pt_get_git_branch) && echo -n ' ')"
+    },
+    {
+        "text": "$([ $(pt_get_git_dir) == 1 ] && echo -n $(pt_get_git_clean $'\uF00C' $'\uFB4E'))"
+    },
+    {
+        "color": {
+            "fg": "250",
+            "bg": "white",
+            "depth": 8
+        },
+        "text": "\uE0B0"
+    },
+    {
+        "color": {
+            "fg": "235",
+            "bg": "white",
+            "depth": 8
+        },
+        "text": "\uE613 $(pt_bash_prompt_command 40 $'\uF6D7')"
+    },
+    {
+        "color": {
+            "fg": "white",
+            "bg": "default"
+        },
+        "text": "\uE0B0"
+    },
+    {
+        "type": "reset"
+    },
+    {
+        "text": " "
+    }
+]

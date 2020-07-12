@@ -1,0 +1,25 @@
+[
+    {
+        "text": "${debian_chroot:+($debian_chroot)}"
+    },
+    {
+        "color": {
+            "fg": "red",
+            "effect": "bold"
+        },
+        "text": "\\h "
+    },
+    {
+        "color": {
+            "fg": "blue",
+            "effect": "bold"
+        },
+        "text": "\\w #"
+    },
+    {
+        "type": "reset"
+    },
+    {
+        "text": " "
+    }
+]

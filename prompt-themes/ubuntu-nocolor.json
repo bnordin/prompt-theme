@@ -1,0 +1,5 @@
+[
+    {
+        "text": "${debian_chroot:+($debian_chroot)}\\u@\\h \\w $ "
+    }
+]

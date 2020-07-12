@@ -1,0 +1,59 @@
+[
+    {
+        "color":{
+            "fg": "white",
+            "bg": "blue",
+            "effect": "bold"
+        },
+        "text": " \\u "
+    },
+    {
+        "color": {
+            "fg": "blue",
+            "bg": "Light blue",
+            "effect": "none"
+        },
+        "text": "\uE0B0"
+    },
+    {
+        "color": {
+            "fg": "white",
+            "bg": "Light blue",
+            "effect": "bold"
+        },
+        "text": " \\h "
+    },
+    {
+        "color": {
+            "fg": "Light blue",
+            "bg": "white",
+            "effect": "none"
+        },
+        "text": "\uE0B0"
+    },
+    {
+        "color": {
+            "fg": "Dark gray",
+            "bg": "white",
+            "effect": "bold"
+        },
+        "text": " $(pt_bash_prompt_command) "
+    },
+    {
+        "color": {
+            "fg": "white",
+            "bg": "default",
+            "effect": "none"
+        },
+        "text": "\uE0B0"
+    },
+    {
+        "color": {
+            "fg": "SkyBlue3",
+            "bg": "default",
+            "effect": "bold",
+            "depth": 8
+        },
+        "text": " "
+    }
+]
