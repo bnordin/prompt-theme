@@ -17,6 +17,8 @@ Example:
 Setup
 -----
 
+- Requires Python3
+
 - Nerdfonts
 
   - https://www.nerdfonts.com
